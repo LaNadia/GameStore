@@ -61,4 +61,16 @@ gulp.task('images', function () {
         .pipe(gulp.dest("dist/img"));
 });
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images'));
+gulp.task('cards', function () {
+    return gulp.src("src/img/cards/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img"));
+});
+
+gulp.task('gallery', function () {
+    return gulp.src("src/img/gallery/**/*")
+        .pipe(imagemin())
+        .pipe(gulp.dest("dist/img"));
+});
+
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'scripts', 'fonts', 'icons', 'html', 'images', 'cards', 'gallery'));
