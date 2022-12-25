@@ -6,6 +6,8 @@
     column-gap: 6rem
     row-gap: 4rem
     padding: 15rem 0
+    @include respond(phone)
+        padding: 8rem 0
 .card
     background-color: $color-blue-dark
     display: grid
@@ -18,7 +20,7 @@
     &__title
         grid-column: 1 / -1
         grid-row: 1 / 2
-        padding:  1.5rem 11.5rem
+        padding:  1.5rem 1.5rem
         background-color: $color-green-dark
         font-size: 1.6rem
         font-weight: 700
